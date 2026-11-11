@@ -2,7 +2,7 @@
 
 A React + TypeScript web app that displays the 2026 MLB standings for all six divisions, using data from MLB's public Stats API.
 
-![Screenshot of the app](screenshot.png)
+[Screenshot of the app](image.png)
 
 ## Features
 
