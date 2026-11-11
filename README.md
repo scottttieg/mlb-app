@@ -1,32 +1,35 @@
-# React + TypeScript + Vite
+# MLB Standings
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A React + TypeScript web app that displays the 2026 MLB standings for all six divisions, using data from MLB's public Stats API.
 
-Currently, two official plugins are available:
+![Screenshot of the app](screenshot.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Standings for all six divisions: wins, losses, winning percentage, and games back
+- Team logos
+- Loading state while data is fetched
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech stack
 
-## Expanding the Oxlint configuration
+- React
+- TypeScript
+- Vite
+- MLB Stats API (statsapi.mlb.com)
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## How it works
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+- The `Standings` component fetches all divisions once when the page loads (using `useEffect`) and stores them in state.
+- Each division is passed as a prop to a `Division` component, which renders it as a table.
+- The MLB API doesn't allow direct browser requests (CORS), so Vite's dev server proxies requests from `/mlb` to `statsapi.mlb.com`.
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Run it locally
+
+npm install
+npm run dev
+
+Then open the local URL shown in the terminal.
+
+## Data
+
+Data and logos are from MLB Advanced Media and are used here for personal, non-commercial purposes.

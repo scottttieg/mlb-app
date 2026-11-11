@@ -16,3 +16,11 @@ Refetches on every page load
 
 --> Not mobile-friendly
 Responsive CSS with media queries
+
+## Known limitations and next steps
+
+- Add error handling for failed requests
+- Set up the proxy for production deployment
+- Fetch division names from the API instead of hardcoding them
+- Let users choose the season
+- Make the layout mobile-friendly
