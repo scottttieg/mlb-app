@@ -1,0 +1,18 @@
+// 
+No error handling: stuck on "Loading..." if the fetch fails
+--> Add .catch() and an error state
+
+The proxy only works in development
+-->Use the host's forwarding or a small server function when deploying
+
+Division names are hardcoded
+-->Fetch them from MLB's divisions endpoint
+
+The season is hardcoded
+-->Make it a setting, or a dropdown to pick a season
+
+Refetches on every page load
+--> Cache results in a backend or with a data library
+
+--> Not mobile-friendly
+Responsive CSS with media queries
